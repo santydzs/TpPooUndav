@@ -1,6 +1,6 @@
 title LugaresParaEstacionarDisponibles
 
-LugaresParaEstacionarGestor->ParquimetrosApi:(EstacionamientoDto) LugaresDisponiblesCercanos(string Direccion)
-LugaresParaEstacionarGestor<--ParquimetrosApi:se devuelve direcciones cercanas donde hay parquimetros disponibles
-LugaresParaEstacionarGestor->EstacionamientosAPI:(EstacionamientoDto) LugaresDisponiblesCercanos(string Direccion)
-LugaresParaEstacionarGestor<--EstacionamientosAPI:se devuelve direcciones cercanas donde hay estacionamientos disponibles
+LugaresParaEstacionarGestor->EstacionamientosAPI:(List<ParquimetroDto>) LugaresDisponiblesCercanos(string Direccion)
+LugaresParaEstacionarGestor<--EstacionamientosAPI:se devuelve direcciones cercanas donde hay parquimetros disponibles
+LugaresParaEstacionarGestor->ParquimetroApi:(List<EstacionamientoDto>) LugaresDisponiblesCercanos(string Direccion)
+LugaresParaEstacionarGestor<--ParquimetroApi:se devuelve direcciones cercanas donde hay estacionamientos disponibles
