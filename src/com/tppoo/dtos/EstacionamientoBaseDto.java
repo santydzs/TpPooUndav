@@ -1,9 +1,11 @@
 package com.tppoo.dtos;
 
-public class EstacionamientoBaseDto {
-    public String direccion;
+import com.tppoo.Entidades.Ubicacion;
 
-    public EstacionamientoBaseDto(String _direccion){
-        this.direccion = _direccion;
+public class EstacionamientoBaseDto {
+    public Ubicacion Ubicacion;
+
+    public EstacionamientoBaseDto(Ubicacion _Ubicacion){
+        this.Ubicacion = _Ubicacion;
     }
 }

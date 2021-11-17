@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        GPS g = new GPS();
+        BuscadorDeRuta g = new BuscadorDeRuta();
         List<ResultDto> aa = g.BuscarRecorrido("cangallo 23", "otro lugar");
     }
 }

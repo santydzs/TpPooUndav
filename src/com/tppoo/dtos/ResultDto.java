@@ -1,13 +1,15 @@
 package com.tppoo.dtos;
 
-public class ResultDto {
-    public EstacionamientoDto Estacionamiento;
-    public ParquimetroDto Parquimetro;
-    public RecorridoDto Recorrido;
+import com.tppoo.Entidades.lugarDisponible;
 
-    public  ResultDto(EstacionamientoDto Estacionamiento, ParquimetroDto Parquimetro, RecorridoDto Recorrido){
-        this.Estacionamiento = Estacionamiento;
-        this.Parquimetro = Parquimetro;
-        this.Recorrido = Recorrido;
+import java.util.List;
+
+public class ResultDto {
+    public lugarDisponible LugaresParaEstacionar;
+    public List<RecorridoDto> Recorrido;
+
+    public  ResultDto(lugarDisponible _LugaresParaEstacionar, List<RecorridoDto> _Recorrido){
+        this.LugaresParaEstacionar = _LugaresParaEstacionar;
+        this.Recorrido = _Recorrido;
     }
 }

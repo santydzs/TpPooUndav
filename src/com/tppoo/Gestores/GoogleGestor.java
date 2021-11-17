@@ -1,8 +1,10 @@
 package com.tppoo.Gestores;
 
 import com.tppoo.APIs.GoogleApi;
-import com.tppoo.dtos.PuntoDelMapa;
+import com.tppoo.Entidades.Ubicacion;
 import com.tppoo.dtos.RecorridoDto;
+
+import java.util.List;
 
 public class GoogleGestor {
     public GoogleApi api;
@@ -11,9 +13,11 @@ public class GoogleGestor {
         this.api = new GoogleApi();
     }
 
-    public RecorridoDto ObtenerRecorrido(String partida, String llegada){
-        PuntoDelMapa coordenadasPartida = api.obtenerLatitudLongitud(partida);
-        PuntoDelMapa coordenadasLlegada = api.obtenerLatitudLongitud(llegada);
-        return api.obtenerRecorrido(coordenadasPartida, coordenadasLlegada);
+    public Ubicacion BuscarDireccion(String direccion){
+        return api.BuscarDireccion(direccion);
+    }
+
+    public List<RecorridoDto> ObtenerRecorrido(Ubicacion Partida, Ubicacion Llegada){
+        return api.obtenerRecorrido(Partida, Llegada);
     }
 }
