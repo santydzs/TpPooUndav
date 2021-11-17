@@ -1,0 +1,8 @@
+title flujo principal
+
+BuscadorDeRuta->LugaresParaEstacionarGestor:(List<lugaresDisponibles>) LugaresParaEstacionarDisponibles(string Hasta)
+BuscadorDeRuta<--LugaresParaEstacionarGestor:lista de estacionamientos (parquimetros y lugares)
+BuscadorDeRuta->GoogleGestor:(Ubicacion) ObtenerUbicacion(string Desde)
+BuscadorDeRuta<--GoogleGestor:se obtiene la Ubicacion de partida
+BuscadorDeRuta->GoogleGestor:(Lis<RecorridoDto>) ObtenerRecorrido(Ubicacion partida, lugarDisponible lugar)
+BuscadorDeRuta<--GoogleGestor:se devuelve la lista de recorridos posibles para la ubicacion del destino

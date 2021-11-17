@@ -1,5 +1,6 @@
 package com.tppoo.Entidades;
 
+//coordenadas
 public class PuntoDelMapa {
     public float latitud;
     public float longitud;

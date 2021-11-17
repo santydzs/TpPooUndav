@@ -1,0 +1,4 @@
+title main
+
+Main->BuscadorDeRuta:(List<ResultDto>) BuscarRecorridos(String Desde, String Hasta)
+Main<--BuscadorDeRuta: se obtiene la lista de recorridos y posibles estacionamientos

@@ -1,0 +1,4 @@
+title ObtenerRecorrido
+
+GoogleGestor->GoogleAPi:(List<RecorridoDto>) obtenerRecorrido(Ubicacion Partida, Ubicacion Llegada)
+GoogleGestor<--GoogleAPi:lista de recorridos posibles para las partidas y llegadas

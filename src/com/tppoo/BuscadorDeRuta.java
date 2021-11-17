@@ -20,13 +20,13 @@ public class BuscadorDeRuta {
         return new ResultDto(lugar, GestorGoogle.ObtenerRecorrido(partida, lugar.Ubicacion) );
     }
 
-    public List<ResultDto> BuscarRecorrido(String Desde, String Hasta){
-
-        //primero obtengo la ubicacion del punto de partida
-        Ubicacion partida = GestorGoogle.BuscarDireccion(Desde);
+    public List<ResultDto> BuscarRecorridos(String Desde, String Hasta){
 
         //primero obtengo los estacionamientos disponibles
-        List<lugarDisponible> estacionamientos = this.GestorEstacionamiento.ObtenerLugaresParaEstacionarCercanos(Hasta);
+        List<lugarDisponible> estacionamientos = this.GestorEstacionamiento.LugaresParaEstacionarDisponibles(Hasta);
+
+        //obtengo la ubicacion del punto de partida
+        Ubicacion partida = GestorGoogle.ObtenerUbicacion(Desde);
 
         //despues por cada uno busco el recorrido en google
         List<ResultDto> resultados = new ArrayList<ResultDto>();

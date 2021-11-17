@@ -1,0 +1,4 @@
+title ObtenerUbicacion
+
+GoogleGestor->GoogleApi:(Ubicacion) BuscarDireccion(String Direccion)
+GoogleGestor<--GoogleApi:se devuelve un nuevo objeto ubicacion

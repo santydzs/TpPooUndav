@@ -6,10 +6,10 @@ import java.util.List;
 
 public class ResultDto {
     public lugarDisponible LugaresParaEstacionar;
-    public List<RecorridoDto> Recorrido;
+    public List<RecorridoDto> Recorridos;
 
-    public  ResultDto(lugarDisponible _LugaresParaEstacionar, List<RecorridoDto> _Recorrido){
+    public  ResultDto(lugarDisponible _LugaresParaEstacionar, List<RecorridoDto> _Recorridos){
         this.LugaresParaEstacionar = _LugaresParaEstacionar;
-        this.Recorrido = _Recorrido;
+        this.Recorridos = _Recorridos;
     }
 }

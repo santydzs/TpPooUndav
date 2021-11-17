@@ -10,15 +10,17 @@ import com.tppoo.Entidades.Ubicacion;
 import com.tppoo.dtos.RecorridoDto;
 
 public class GoogleApi {
-    //metodos solo de mock
+    //metodos privados solo de mock
     private List<PuntoDelMapa> MockPuntosDelRecorrido(){
         PuntoDelMapa punto1 = new PuntoDelMapa(54.2f, 6.2f);
         PuntoDelMapa punto2 = new PuntoDelMapa(23.4f, 21f);
         PuntoDelMapa punto3 = new PuntoDelMapa(23.4f, 21f);
+        PuntoDelMapa punto4 = new PuntoDelMapa(77f, 21.33f);
         List<PuntoDelMapa> recorrido = new ArrayList<PuntoDelMapa>();
         recorrido.add(punto1);
         recorrido.add(punto2);
         recorrido.add(punto3);
+        recorrido.add(punto4);
         return recorrido;
     }
 
@@ -29,6 +31,7 @@ public class GoogleApi {
         return c1;
     }
 
+    //Busca las coordenadas de una direccion, generando una ubicacion
     public Ubicacion BuscarDireccion(String direccion){
         return new Ubicacion(direccion, new PuntoDelMapa(12.45f, 8.5f));
     }
@@ -36,7 +39,7 @@ public class GoogleApi {
     //API para obtener el recorrido
     public List<RecorridoDto> obtenerRecorrido(Ubicacion partida, Ubicacion llegada){
 
-        //mocks, aca se consultaria a la api de google maps
+        //mocks, aca se consultaria a la api de google maps, ahora solo son mocks
         List<PuntoDelMapa> recorrido = MockPuntosDelRecorrido();
 
         Calendar c1 = ObtenerCalendar();
@@ -48,6 +51,14 @@ public class GoogleApi {
         List<RecorridoDto> opcionesDeRecorridos = new ArrayList<RecorridoDto>();
         opcionesDeRecorridos.add(recorridoTotal1);
         opcionesDeRecorridos.add(recorridoTotal2);
+
+        if(llegada.Direccion.equals("mitre 2204")){
+            Calendar c = ObtenerCalendar();
+            c.add(Calendar.MINUTE, 30);
+            RecorridoDto nuevoRecorridoTotal = new RecorridoDto(llegada, partida, recorrido.subList(1,3), c);
+            opcionesDeRecorridos.add(nuevoRecorridoTotal);
+        }
+
         return opcionesDeRecorridos;
     }
 

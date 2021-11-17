@@ -13,7 +13,7 @@ public class GoogleGestor {
         this.api = new GoogleApi();
     }
 
-    public Ubicacion BuscarDireccion(String direccion){
+    public Ubicacion ObtenerUbicacion(String direccion){
         return api.BuscarDireccion(direccion);
     }
 

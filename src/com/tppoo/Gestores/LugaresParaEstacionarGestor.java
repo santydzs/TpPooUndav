@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+//clase encargada de obtener las distintas opciones de estacionamiento
 public class LugaresParaEstacionarGestor {
     private ILugarParaEstacionar<EstacionamientoDto> _estacionamientoApi;
     private ILugarParaEstacionar<ParquimetroDto> _parquimetroApi;
@@ -19,7 +20,7 @@ public class LugaresParaEstacionarGestor {
         this._parquimetroApi = new ParquimetroApi();
     }
 
-    public List<lugarDisponible> ObtenerLugaresParaEstacionarCercanos(String direccion){
+    public List<lugarDisponible> LugaresParaEstacionarDisponibles(String direccion){
 
         //obtengo estacionamientos y parquimetros disponibles cercanos
         List<EstacionamientoDto> estacionamientosEncontrados = this._estacionamientoApi.LugaresDisponiblesCercanos(direccion);

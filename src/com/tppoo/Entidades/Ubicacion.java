@@ -1,5 +1,6 @@
 package com.tppoo.Entidades;
 
+//clase utilizada para representar una ubicacion en el mapa, consta de direccion y coordenadas
 public class Ubicacion {
     public String Direccion;
     public PuntoDelMapa PuntoDelMapa;
